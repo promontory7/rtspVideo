@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name"> 视频监控 </string>
+    <string name="title_activity_vlc_player">VlcPlayerActivity</string>
+
+    <string-array name="video_setting">
+        <item>VLC</item>
+        <item>VideoView</item>
+    </string-array>
+</resources>
