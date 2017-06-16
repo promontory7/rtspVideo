@@ -3,15 +3,17 @@ package com.kuyuntech.rtsp.rtspvideo.activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 
 import com.jaeger.library.StatusBarUtil;
 import com.kuyuntech.rtsp.rtspvideo.R;
 
 public class VlcPlayerActivity extends AppCompatActivity {
-    String url ="";
+    String url = "";
     String title = "";
 
     @Override
@@ -27,10 +29,15 @@ public class VlcPlayerActivity extends AppCompatActivity {
 
     }
 
-    public String getUrl(){
+    public String getUrl() {
         return url;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 }
 
 

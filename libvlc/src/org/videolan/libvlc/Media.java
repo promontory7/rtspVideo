@@ -738,6 +738,8 @@ public class Media extends VLCObject<Media.Event> {
         if (decoder == HWDecoderUtil.Decoder.NONE ||
                 (decoder == HWDecoderUtil.Decoder.UNKNOWN && !force)) {
             addOption(":codec=all");
+            System.out.println("------------没执行---file-caching=1500");
+
             return;
         }
 
@@ -752,6 +754,7 @@ public class Media extends VLCObject<Media.Event> {
          */
         addOption(":file-caching=1500");
         addOption(":network-caching=1500");
+        System.out.println("---------------file-caching=1500");
 
         final StringBuilder sb = new StringBuilder(":codec=");
         if (decoder == HWDecoderUtil.Decoder.MEDIACODEC || decoder == HWDecoderUtil.Decoder.ALL)

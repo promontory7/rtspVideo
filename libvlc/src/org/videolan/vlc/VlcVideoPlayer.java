@@ -261,9 +261,9 @@ public class VlcVideoPlayer implements MediaPlayerControl, Handler.Callback, IVL
 
         if (path.contains("://")) {
             final Media media = new Media(libVLC, Uri.parse(path));
-//            if (Build.VERSION.SDK_INT <= KITKAT) {
+            if (Build.VERSION.SDK_INT <= KITKAT) {
                 media.setHWDecoderEnabled(false, false);
-//            }
+            }
             media.setEventListener(mMediaListener);
             //    media.parseAsync(Media.Parse.FetchNetwork, 5 * 1000);
             mMediaPlayer.setMedia(media);

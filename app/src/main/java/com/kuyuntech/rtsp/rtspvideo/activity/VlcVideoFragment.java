@@ -77,15 +77,17 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-
-        vlcVideoView.clearFocus();
-        vlcVideoView.onStop();
-        vlcVideoView.onDestory();
+    public void onStop() {
+        super.onStop();
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        vlcVideoView.onStop();
+        vlcVideoView.onDestory();
+    }
 
     public void onClick(View view) {
         switch (view.getId()) {
@@ -114,4 +116,6 @@ public class VlcVideoFragment extends Fragment implements View.OnClickListener {
             isFullscreen = true;
         }
     }
+
+
 }
